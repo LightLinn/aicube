@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes gradient-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-gradient-rotation {
+  animation: gradient-rotation 8s linear infinite;
+}
+
+/* 添加動畫效果 */
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(112, 190, 250, 0.3),
+                inset 0 0 10px rgba(112, 190, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(112, 190, 250, 0.5),
+                inset 0 0 15px rgba(112, 190, 250, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(112, 190, 250, 0.3),
+                inset 0 0 10px rgba(112, 190, 250, 0.3);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 2s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 考慮 header 高度 */
+}
+
+/* 為了更好的兼容性，也可以使用 JavaScript 滾動 */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
